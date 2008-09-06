@@ -1,9 +1,10 @@
 
+import sys
 from converter.converter import Converter
 
 class Main(object):
-    def __init__(self):
-        for i in self._parser("A-large-practice.in"):
+    def __init__(self, type):
+        for i in self._parser("input/A-"+type+"-practice.in"):
             line = i.split(" ")
             converter = Converter(line[1], line[2].split("\n")[0])
             print converter.convert(line[0])
@@ -22,4 +23,7 @@ class Main(object):
 
 
 if __name__ == "__main__":
-    Main()
+    type = "small"
+    if len(sys.argv) > 1 and sys.argv[1] == "large":
+        type = "large"
+    Main(type)
