@@ -29,12 +29,14 @@ class Converter(object):
 
     def getTargetNumber(self, decimal_number):
         intermediate_number = []
-        while (decimal_number > self.target_base):
+        while (decimal_number >= self.target_base):
             intermediate_number.append(decimal_number % self.target_base)
             decimal_number = decimal_number / self.target_base
         intermediate_number.append(decimal_number)
 
         target_number = ""
-        for l in range(len(intermediate_number)):
+        l =len(intermediate_number)
+        while l > 0:
+            l -= 1
             target_number += str(self.numeric_target_language[intermediate_number[l]])
         return target_number

@@ -3,9 +3,9 @@ from converter.converter import Converter
 
 class Main(object):
     def __init__(self):
-        for i in self._parser("small.in"):
+        for i in self._parser("A-large-practice.in"):
             line = i.split(" ")
-            converter = Converter(line[1], line[2])
+            converter = Converter(line[1], line[2].split("\n")[0])
             print converter.convert(line[0])
 
     def _parser(self, filename):
