@@ -1,13 +1,15 @@
+
 import sys
 from triangle import Triangle
 
 class Main(object):
     def __init__(self, type):
-        for i in self._parser("input/A-"+type+"-practice.in"):
+        j=0
+        for i in self._parser("../input/A-"+type+"-practice.in"):
             line = i.split(" ")
-            triangle = Triangle()
-            sides = triangle.calculateLengths(self.getIntPoints(line))
-            print triangle.calculateArea(sides)
+            j += 1
+            triangle = Triangle(self.getIntPoints(line));
+            print "Case #"+ str(j)+": " +triangle.getTriangleDescription()
 
     def _parser(self, filename):
         try:
