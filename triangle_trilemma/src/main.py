@@ -17,7 +17,7 @@ class Main(object):
                 line = file.readline()
                 number_of_lines -= 1
                 yield line
-                
+
         except IOError:
             print "No file found"
 
